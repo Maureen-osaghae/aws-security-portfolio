@@ -55,7 +55,9 @@ You’ll see “Metrics with no dimensions” since no data has been collected y
 You should see three metrics:
 
 CreateUserCount
+
 CreateAccessKeyCount
+
 PutUserPolicyCount
 
 NOTE: These custom metrics can take a few minutes to appear. If you don’t see them right away, refresh every 2-3 minutes until you see them. It should take less than 5 minutes.
