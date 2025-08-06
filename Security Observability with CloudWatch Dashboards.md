@@ -62,7 +62,8 @@ NOTE: These custom metrics can take a few minutes to appear. If you don’t see 
 
 We’re ready to move on to the next step.
 
-Step 2: Create Your First Security Dashboard
+<h2>Step 2: Create Your First Security Dashboard</h2>
+
 Navigate to CloudWatch > Dashboards (in the left menu – you may have to expand it to see the option) and click Create dashboard.
 
 <img width="959" height="325" alt="image" src="https://github.com/user-attachments/assets/3069d692-7395-4d2b-b998-5db6cf6a3871" />
@@ -79,7 +80,9 @@ Click Add widget (if it doesn’t automatically open up already) and select Line
 Add all three security metrics:
 
 SecurityMonitoring > CreateUserCount
+
 SecurityMonitoring > CreateAccessKeyCount
+
 SecurityMonitoring > PutUserPolicyCount
 
 <img width="891" height="385" alt="image" src="https://github.com/user-attachments/assets/d89e6e06-d378-444a-97ff-4297c5d777b3" />
@@ -93,7 +96,9 @@ Widget options:
 To customize our widget, we can click on the 3 dots in the corner of the graph and “Edit.”
 
 Change the title to: IAM Security Events Timeline (by clicking on the pencil icon next to the current title)
+
 Set the period to: 1 minute
+
 Statistic: Sum
 
 <img width="932" height="464" alt="image" src="https://github.com/user-attachments/assets/018fe3c2-5b0f-41fa-8e99-8256b9522fdd" />
