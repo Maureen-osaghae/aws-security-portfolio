@@ -114,11 +114,10 @@ Click Update widget.
 
 Click on Save (or enable Autosave) in the top right corner. If you don’t do this, it won’t save your dashboard.
 
-Add a Number Widget
+<h2>Add a Number Widget</h2>
 To demonstrate more graph types, let’s add another widget. Click on the + icon in the top right corner and select Number.
 
 <img width="630" height="320" alt="image" src="https://github.com/user-attachments/assets/80d4a35c-1fca-4aca-97e9-318b1c15ac25" />
-<img width="889" height="422" alt="image" src="https://github.com/user-attachments/assets/77d10702-8de9-4d73-b8c6-55b16826979a" />
 <img width="959" height="296" alt="image" src="https://github.com/user-attachments/assets/37dbc5b9-2670-40c4-967a-7185390ef6f4" />
 
 
