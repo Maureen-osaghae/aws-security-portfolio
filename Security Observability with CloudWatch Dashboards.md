@@ -16,7 +16,7 @@ Let’s get started!
 
 <h2>Learning Objectives</h2>
 
-What I did:
+<h2>What I did:</h2>
 
 • Create CloudWatch dashboards for security monitoring
 
@@ -24,9 +24,9 @@ What I did:
 
 • Apply CloudWatch math expressions for advanced metrics
 
-• Display relevant logs in your dashboards
+• Display relevant logs in dashboards
 
-Lab Setup
+<h2>Lab Setup</h2>
 This lab already has a few things set up for me:
 
 • CloudTrail sending logs to CloudWatch Logs
