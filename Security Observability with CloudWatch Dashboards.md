@@ -8,5 +8,8 @@ While GuardDuty catches some threats and can help you with investigations, it’
 
 In this lab, you’ll build CloudWatch dashboards that take raw CloudTrail data and turn it into visual security insights that your team can use. Instead of scrolling through JSON logs, you’ll create near real-time monitoring that highlights IAM indicators of compromise resources and tracks security trends.
 
-By the end, you’ll have a practical dashboard that automatically detects and visualizes IAM IoCs that could help you stop an ongoing breach.
+By the end, you’ll have a practical dashboard that automatically detects and visualizes IAM IoCs that could help you stop an ongoing breach. 
+
+<img width="1536" height="1320" alt="image" src="https://github.com/user-attachments/assets/64eb376b-eed3-43c5-a4e5-0a52aa04ec22" />
+
 
