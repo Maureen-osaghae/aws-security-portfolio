@@ -74,7 +74,8 @@ Name it: Security-Monitoring-Dashboard
 <img width="923" height="399" alt="image" src="https://github.com/user-attachments/assets/0e54c354-5805-4570-9bcd-4f9196a9e792" />
 
 
-Add a Line Chart Widget
+</h2>Add a Line Chart Widget</h2>
+
 Click Add widget (if it doesn’t automatically open up already) and select Line.
 
 Add all three security metrics:
