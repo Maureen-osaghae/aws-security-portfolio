@@ -180,21 +180,20 @@ Rename the “Expression1” label to “Total IAM Security Activity”
 
 Update Widget
 
-<img width="890" height="427" alt="image" src="https://github.com/user-attachments/assets/0315a16c-545c-453c-a1e9-d52019b2ec60" />
-
-<img width="878" height="422" alt="image" src="https://github.com/user-attachments/assets/8f9157cc-3c22-4d97-b672-d6682be5c2fc" />
-
 This will display only the math expression result.
 
+<h2>Step 4: Create a Stacked Area Chart</h2
 
-Step 4: Create a Stacked Area Chart
 Why Use a Stacked Area Chart?
 
 A stacked area chart is valuable for security monitoring because:
 
 Proportional Analysis: Shows not just total activity, but the breakdown of which types of events are most common
+
 Trend Identification: Reveals if certain attack patterns are increasing (e.g., more CreateUser events vs. CreateAccessKey events)
+
 Attack Pattern Recognition: Helps identify if an attacker is focusing on specific IAM tactics
+
 Visual Comparison: Easy to see which security events dominate during different time periods
 
 Create a stacked area chart:
@@ -214,7 +213,8 @@ Statistic: Sum
 
 This shows the proportion of different security events over time.
 
-Step 5: Add Log Insights Widget
+<h2>Step 5: Add Log Insights Widget</h2>
+
 Add a Logs table widget.
 
 Start by adding a new widget, and then click on the “Logs” tab. Then, select “Logs table.”
@@ -246,15 +246,12 @@ Click on “Save” in the top right to save your dashboard.
 
 <img width="959" height="446" alt="image" src="https://github.com/user-attachments/assets/a560709d-afff-4241-bd55-1b71f84c465a" />
 
-
-
 Side bar: Do you need all these widgets?
 Probably not. We’re creating them so you can see what’s possible with CloudWatch dashboards, but you probably wouldn’t need everything we just created in a single dashboard. Try to focus on what would make this actionable, where less is often better in this situation.
 
 If you create new widgets, they should give you unique insights and a different perspective. If they repeat similar information, they’re probably redundant. Just something to keep in mind!
 
 <img width="554" height="314" alt="image" src="https://github.com/user-attachments/assets/d62d130f-57f9-4dc9-a47c-ea7f593de19f" />
-
 
 <img width="677" height="401" alt="image" src="https://github.com/user-attachments/assets/aba980da-6df0-4ad5-a297-a513ad9fbbb5" />
 
@@ -274,15 +271,19 @@ Note: it will take a few seconds for the function to finish executing each time.
 This command:
 
 Gets your account ID automatically (the function name includes the account ID which is why this is needed)
-Invokes the security event generation Lambda function
-Shows the response with details of what events were created
-Adds a line break for readability
-Wait a few seconds between each execution to allow CloudTrail to process the events.
 
+Invokes the security event generation Lambda function
+
+Shows the response with details of what events were created
+
+Adds a line break for readability
+
+Wait a few seconds between each execution to allow CloudTrail to process the events.
 
 <img width="959" height="404" alt="image" src="https://github.com/user-attachments/assets/8fa17058-0ecb-40b5-8fab-6f1dd4af6457" />
 
-Step 7.1: Test Your Dashboard
+<h2>Step 7.1: Test Your Dashboard</h2>
+
 Let’s go back to the dashboard tab now.
 
 Set your dashboard time range to Last 30 minutes by clicking on “Custom” to see all your test data.
@@ -296,28 +297,19 @@ Wait about 2-5 minutes for CloudTrail to catch up as it’s not a real-time serv
 
 <img width="952" height="356" alt="image" src="https://github.com/user-attachments/assets/9e4ca9b1-25fa-4db8-8c66-c5ce6225a681" />
 
-<img width="959" height="409" alt="image" src="https://github.com/user-attachments/assets/2eb1bb8f-82b4-4387-a091-c154e6725ff8" />
+<h2>Step 7.2: Bonus – how would you use this dashboard to investigate a threat?</h2>
 
-Step 7.2: Bonus – how would you use this dashboard to investigate a threat?
 What can you tell from the logs shown in the dashboard? If you saw this in your organization’s production environment, what would you do with that information?
 
 This is a good exercise for you to think about. As a starting point example, if you look up the IP address, you’ll see that it’s an Amazon IP address coming from an EC2.compute.amazonaws.com hostname. This would indicate the threat actor is launching their attack from an AWS environment, which we know is true since we used CloudShell to call Lambda, and Lambda executed the actions.
 
-Step 8: Customize Your Dashboard
-Experiment with these dashboard features:
-
-Widget Arrangement: Drag widgets to arrange them logically.
-Time Range: Try different time ranges and see how that effects graphs.
-Auto-refresh: Set the dashboard to auto-refresh every x amount.
-Widget Sizing: Resize widgets for better visibility.
-Play around and see what you can do!
-
-Conclusion
-That’s it! You’ve built a working security dashboard in CloudWatch.
+<h2>Conclusion</h2>
+That’s it! 
+I’ve built a working security dashboard in CloudWatch.
 
 What started as buried CloudTrail logs is now a visual monitoring system that actually tells you what’s happening in your environment. When someone creates users, generates access keys, or modifies policies, you’ll know about it.
 
-You can take this same approach and apply it to other security events in your own AWS environment. Maybe you want to track failed login attempts, or monitor when someone accesses sensitive S3 buckets. The pattern is the same: CloudTrail logs, metric filters, and dashboards.
+Same approach can be apply it to other security events in your own AWS environment. Maybe you want to track failed login attempts, or monitor when someone accesses sensitive S3 buckets. The pattern is the same: CloudTrail logs, metric filters, and dashboards.
 
 A few things worth considering as you move forward:
 
