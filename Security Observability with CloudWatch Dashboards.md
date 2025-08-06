@@ -138,7 +138,7 @@ This gives you a quick summary view for the past hour.
 
 Click on Save (if you haven’t enabled Autosave).
 
-Step 3: Add Math Expressions
+<h2>Step 3: Add Math Expressions</h2>
 
 Why Use Math Expressions?
 
@@ -159,9 +159,7 @@ Create the widget and then edit it.
 
 <img width="880" height="421" alt="image" src="https://github.com/user-attachments/assets/ea005255-2f9a-48eb-9ddf-17142dc43a40" />
 
-<img width="875" height="425" alt="image" src="https://github.com/user-attachments/assets/fb55acd5-d2db-4d3a-aff4-021b17c6d7c6" />
-
-Add the math expression:
+<h2>Add the math expression:</h2>
 
 Click Add math dropdown
 Select Start with empty expression
