@@ -96,6 +96,9 @@ Change the title to: IAM Security Events Timeline (by clicking on the pencil ico
 Set the period to: 1 minute
 Statistic: Sum
 
+<img width="932" height="464" alt="image" src="https://github.com/user-attachments/assets/018fe3c2-5b0f-41fa-8e99-8256b9522fdd" />
+
+
 <img width="393" height="345" alt="image" src="https://github.com/user-attachments/assets/fb222809-4f41-4a68-a9ba-2450607f84b1" />
 
 <img width="432" height="250" alt="image" src="https://github.com/user-attachments/assets/1cc95b48-ae7f-470f-a075-9ec9a6c4c08c" />
@@ -110,6 +113,8 @@ Add a Number Widget
 To demonstrate more graph types, let’s add another widget. Click on the + icon in the top right corner and select Number.
 
 <img width="630" height="320" alt="image" src="https://github.com/user-attachments/assets/80d4a35c-1fca-4aca-97e9-318b1c15ac25" />
+<img width="889" height="422" alt="image" src="https://github.com/user-attachments/assets/77d10702-8de9-4d73-b8c6-55b16826979a" />
+<img width="959" height="296" alt="image" src="https://github.com/user-attachments/assets/37dbc5b9-2670-40c4-967a-7185390ef6f4" />
 
 
 Add the same three metrics and “Create widget”.
@@ -158,10 +163,16 @@ Enter this expression: m1 + m2 + m3
 The system will automatically assign m1, m2, m3 to your three metrics in the order you added them.
 Widget options:
 
+<img width="865" height="371" alt="image" src="https://github.com/user-attachments/assets/954fc5af-fd08-4fc5-a812-80e8312f5953" />
+
+
 Title: Combined IAM Security Activity Score
 Hide the individual metrics (uncheck ID “m1” and “Label” CreateAccessKeyCount, and do the same for m2 & m3. e1 should be all that’s still checked)
 Set the Statistic to Sum and the Period to 1 minute
 Rename the “Expression1” label to “Total IAM Security Activity”
+
+<img width="899" height="419" alt="image" src="https://github.com/user-attachments/assets/3127efc9-f17a-4b58-8c7d-7a7a02f18568" />
+
 Update Widget
 
 <img width="890" height="427" alt="image" src="https://github.com/user-attachments/assets/0315a16c-545c-453c-a1e9-d52019b2ec60" />
@@ -193,6 +204,9 @@ Title: IAM Security Events Breakdown
 Period: 1 minute
 Statistic: Sum
 
+<img width="881" height="413" alt="image" src="https://github.com/user-attachments/assets/b5d35cb0-feee-4367-9bea-b15086d34aea" />
+
+
 This shows the proportion of different security events over time.
 
 Step 5: Add Log Insights Widget
@@ -206,7 +220,8 @@ Start by adding a new widget, and then click on the “Logs” tab. Then, select
 On the next page, click on the dropdown under “Selection criteria” to select the correct log group. There shouldn’t be that many to select from, but look for one that looks something like /aws/cloudtrail/security-observability-with-cloudwatch-dashboards
 
 Query:
-<img width="584" height="346" alt="image" src="https://github.com/user-attachments/assets/7fe05cd9-ee0d-4bde-b11d-9f5d01c3caaa" />
+<img width="958" height="402" alt="image" src="https://github.com/user-attachments/assets/38680a0c-f6fa-4b4c-8fde-012bec3080ac" />
+
 
 This will gather the timestamp, eventName, userIdentity type, and sourceIPaddress from CloudTrail logs for our IAM events we’ve been filtering for. It will then sort the results by timestamp in a descending order and limit results to 20.
 
@@ -223,6 +238,9 @@ Everything should be prepopulated for you:
 Confirm and “Add to dashboard”
 
 Click on “Save” in the top right to save your dashboard.
+
+<img width="959" height="446" alt="image" src="https://github.com/user-attachments/assets/a560709d-afff-4241-bd55-1b71f84c465a" />
+
 
 
 Side bar: Do you need all these widgets?
@@ -244,7 +262,8 @@ Execute the Lambda function Run this command 3-4 times with a few seconds betwee
 
     aws lambda invoke --function-name $(aws sts get-caller-identity --query Account --output text)-generate-security-events response.json && cat response.json && echo
 
-<img width="959" height="353" alt="image" src="https://github.com/user-attachments/assets/21ad479f-9a8f-4f24-a710-9560569923b3" />
+<img width="959" height="431" alt="image" src="https://github.com/user-attachments/assets/b244bc5c-7330-46de-b7c7-c23f20722bd7" />
+
 Note: it will take a few seconds for the function to finish executing each time.
 
 This command:
@@ -258,6 +277,50 @@ Wait a few seconds between each execution to allow CloudTrail to process the eve
 
 <img width="959" height="404" alt="image" src="https://github.com/user-attachments/assets/8fa17058-0ecb-40b5-8fab-6f1dd4af6457" />
 
+Step 7.1: Test Your Dashboard
+Let’s go back to the dashboard tab now.
+
+Set your dashboard time range to Last 30 minutes by clicking on “Custom” to see all your test data.
+
+Wait about 2-5 minutes for CloudTrail to catch up as it’s not a real-time service. Also, some graphs may populate before others.
+
+<img width="668" height="427" alt="image" src="https://github.com/user-attachments/assets/10b55e03-5391-4a3c-9336-1d1289ce4654" />
+
+
+<img width="959" height="415" alt="image" src="https://github.com/user-attachments/assets/12028a9c-212d-492a-90b6-da35843cedab" />
+
+<img width="952" height="356" alt="image" src="https://github.com/user-attachments/assets/9e4ca9b1-25fa-4db8-8c66-c5ce6225a681" />
+
+<img width="959" height="409" alt="image" src="https://github.com/user-attachments/assets/2eb1bb8f-82b4-4387-a091-c154e6725ff8" />
+
+Step 7.2: Bonus – how would you use this dashboard to investigate a threat?
+What can you tell from the logs shown in the dashboard? If you saw this in your organization’s production environment, what would you do with that information?
+
+This is a good exercise for you to think about. As a starting point example, if you look up the IP address, you’ll see that it’s an Amazon IP address coming from an EC2.compute.amazonaws.com hostname. This would indicate the threat actor is launching their attack from an AWS environment, which we know is true since we used CloudShell to call Lambda, and Lambda executed the actions.
+
+Step 8: Customize Your Dashboard
+Experiment with these dashboard features:
+
+Widget Arrangement: Drag widgets to arrange them logically.
+Time Range: Try different time ranges and see how that effects graphs.
+Auto-refresh: Set the dashboard to auto-refresh every x amount.
+Widget Sizing: Resize widgets for better visibility.
+Play around and see what you can do!
+
+Conclusion
+That’s it! You’ve built a working security dashboard in CloudWatch.
+
+What started as buried CloudTrail logs is now a visual monitoring system that actually tells you what’s happening in your environment. When someone creates users, generates access keys, or modifies policies, you’ll know about it.
+
+You can take this same approach and apply it to other security events in your own AWS environment. Maybe you want to track failed login attempts, or monitor when someone accesses sensitive S3 buckets. The pattern is the same: CloudTrail logs, metric filters, and dashboards.
+
+A few things worth considering as you move forward:
+
+Set up some alarms so you get notified when things spike
+Add other IAM events that could indicate a breach (refer to our privilege escalation course for more)
+Share this with your team and see what they think is missing
+Re-create the dashboards and widgets you want to keep with IaC
+The reality is that most security incidents could have been caught earlier if someone was actually looking at the right data. Now you know how to make that data visible!
 
 
 
